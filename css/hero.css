@@ -1,0 +1,314 @@
+/* ==================== HERO — 3 LAYER PARALLAX ==================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  background: var(--tea-900);
+}
+
+/* Shared layer base */
+.hero-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* LAYER 1: Sky + distant mountains (furthest back, full hero) */
+.hero-sky {
+  z-index: 1;
+}
+
+.hero-sky-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.15);
+  will-change: transform;
+}
+
+/* LAYER 2: Floating leaves (between sky and hills) */
+.leaves-container {
+  position: absolute;
+  top: 0;
+  left: -5%;
+  right: -5%;
+  bottom: 0;
+  z-index: 9;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.floating-leaf {
+  position: absolute;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.floating-leaf img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* LAYER 3: Hills foreground — mask cuts out its own sky, revealing Layer 1 */
+.hero-hills {
+  z-index: 12;
+}
+
+.hero-hills-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  will-change: transform;
+  /* Top 40% transparent (cuts sky), gradual blend, fully visible from 60% down */
+  mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.7) 50%, black 60%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.7) 50%, black 60%);
+}
+
+/* Overlay for text readability */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 13;
+  background: linear-gradient(135deg, rgba(26, 46, 26, 0.55) 0%, rgba(26, 46, 26, 0.25) 50%, rgba(26, 46, 26, 0.4) 100%);
+  pointer-events: none;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 14;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 120px 40px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 560px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(163, 204, 163, 0.15);
+  border: 1px solid rgba(163, 204, 163, 0.3);
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--tea-200);
+  margin-bottom: 28px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--cream);
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(250, 248, 244, 0.8);
+  margin-bottom: 36px;
+  max-width: 460px;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--tea-300);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(250, 248, 244, 0.6);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ==================== HERO SLIDER ==================== */
+.hero-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: 10px;
+}
+
+.slide-card {
+  flex: 0 0 calc(50% - 10px);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transform: scale(0.92);
+  opacity: 0.6;
+  transition: var(--transition-slow);
+  cursor: pointer;
+}
+
+.slide-card.active {
+  transform: scale(1);
+  opacity: 1;
+  border-color: rgba(163, 204, 163, 0.4);
+  box-shadow: var(--shadow-glow);
+}
+
+.slide-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.slide-info {
+  padding: 16px 20px;
+}
+
+.slide-info h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 2px;
+}
+
+.slide-origin {
+  font-size: 0.78rem;
+  color: rgba(250, 248, 244, 0.5);
+}
+
+.slide-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--tea-300);
+  margin-top: 6px;
+  display: block;
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.slider-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--cream);
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+
+.slider-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.08);
+}
+
+.slider-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--tea-300);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Hero Bottom */
+.hero-bottom-accent {
+  position: absolute;
+  bottom: 40px;
+  right: 5%;
+  z-index: 13;
+  width: 280px;
+}
+
+.teapot-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  z-index: 15;
+}
+
+.hero-wave svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}

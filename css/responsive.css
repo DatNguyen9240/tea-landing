@@ -1,0 +1,193 @@
+/* ==================== RESPONSIVE — 1024px ==================== */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 28px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    padding: 140px 28px 100px;
+    gap: 40px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-slider {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .hero-bottom-accent {
+    display: none;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .story-visual {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .story-content {
+    text-align: center;
+  }
+
+  .story-features {
+    align-items: center;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==================== RESPONSIVE — 768px ==================== */
+@media (max-width: 768px) {
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.4rem, 8vw, 3.5rem);
+  }
+
+  .hero-content {
+    padding: 120px 20px 80px;
+  }
+
+  .hero-stats {
+    gap: 24px;
+  }
+
+  .slide-card {
+    flex: 0 0 calc(70% - 10px);
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .origin-locations {
+    gap: 12px;
+  }
+
+  .location {
+    padding: 10px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cta-card {
+    padding: 48px 28px;
+  }
+
+  .cta-form {
+    flex-direction: column;
+  }
+}
+
+/* ==================== RESPONSIVE — 480px ==================== */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero-content {
+    padding: 100px 16px 60px;
+  }
+
+  .hero-badge {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-headline {
+    font-size: 2.2rem;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .slide-card {
+    flex: 0 0 calc(85% - 10px);
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .origin-locations {
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+}
