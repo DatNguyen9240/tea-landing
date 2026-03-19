@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy of the Green Leaf — Premium Artisan Tea</title>
+  <meta name="description"
+    content="Discover handcrafted premium teas sourced from the finest organic plantations. Experience nature in every sip with our boutique tea collection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" width="40" height="40">
+          <path d="M20 4 C12 4, 6 12, 8 20 C10 28, 16 34, 20 36 C24 34, 30 28, 32 20 C34 12, 28 4, 20 4Z" fill="none"
+            stroke="currentColor" stroke-width="1.5" />
+          <path d="M20 10 C16 14, 14 20, 16 26 M20 10 C24 14, 26 20, 24 26" fill="none" stroke="currentColor"
+            stroke-width="1" />
+          <line x1="20" y1="26" x2="20" y2="36" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+        <span>VERDANT</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#products">Collection</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#origin">Origin</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+      </ul>
+      <a href="#products" class="nav-cta">Shop Now</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#products">Collection</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="#origin">Origin</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#products" class="mobile-cta">Shop Now</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+
+    <!-- LAYER 1 (furthest back): Sky + distant mountains -->
+    <div class="hero-layer hero-sky" id="heroSky">
+      <img src="images/sky-bg.png" alt="" class="hero-sky-img">
+    </div>
+
+    <!-- LAYER 2 (middle): Floating tea leaves -->
+    <div class="leaves-container" id="leavesContainer"></div>
+
+    <!-- LAYER 3 (foreground): Tea plantation hills -->
+    <div class="hero-layer hero-hills" id="heroHills">
+      <img src="images/hills-fg.png" alt="" class="hero-hills-img">
+    </div>
+
+    <!-- Overlay for text readability -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero content -->
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">✦ Premium Organic Tea ✦</span>
+        <h1 class="hero-headline" id="heroHeadline">LEGACY OF THE<br>GREEN LEAF</h1>
+        <p class="hero-description" id="heroDescription">Handpicked from mist-laden highlands, our artisan teas capture
+          the essence of nature — pure, untouched, and crafted with centuries of tradition.</p>
+        <div class="hero-cta-group">
+          <a href="#products" class="btn-primary" id="heroCta">Explore Collection</a>
+          <a href="#story" class="btn-secondary">Our Story →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">12+</span>
+            <span class="stat-label">Tea Varieties</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Organic</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Years Heritage</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slider">
+        <div class="slider-wrapper" id="sliderWrapper">
+          <div class="slider-track" id="sliderTrack">
+            <div class="slide-card active" data-index="0">
+              <img src="images/product-1.png" alt="Green Garden Tea">
+              <div class="slide-info">
+                <h3>Green Garden</h3>
+                <p class="slide-origin">Da Lat Highlands</p>
+                <span class="slide-price">$28.00</span>
+              </div>
+            </div>
+            <div class="slide-card" data-index="1">
+              <img src="images/product-2.png" alt="Ceremonial Matcha">
+              <div class="slide-info">
+                <h3>Ceremonial Matcha</h3>
+                <p class="slide-origin">Uji, Kyoto</p>
+                <span class="slide-price">$42.00</span>
+              </div>
+            </div>
+            <div class="slide-card" data-index="2">
+              <img src="images/product-3.png" alt="Golden Oolong">
+              <div class="slide-info">
+                <h3>Golden Oolong</h3>
+                <p class="slide-origin">Fujian Province</p>
+                <span class="slide-price">$35.00</span>
+              </div>
+            </div>
+            <div class="slide-card" data-index="3">
+              <img src="images/product-4.png" alt="Silver Needle">
+              <div class="slide-info">
+                <h3>Silver Needle</h3>
+                <p class="slide-origin">Yunnan, China</p>
+                <span class="slide-price">$55.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn prev" id="sliderPrev" aria-label="Previous">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+          <div class="slider-dots" id="sliderDots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="slider-btn next" id="sliderNext" aria-label="Next">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teapot accent -->
+    <div class="hero-bottom-accent">
+      <img src="images/teapot.png" alt="Teapot" class="teapot-img">
+    </div>
+
+    <!-- Wave transition -->
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,80 C360,120 720,40 1080,80 C1260,100 1380,60 1440,80 L1440,120 L0,120Z" fill="#faf8f4" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== STORY SECTION ========== -->
+  <section class="section story-section" id="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-visual reveal-left">
+          <div class="story-img-wrapper">
+            <img src="images/plantation.png" alt="Tea Plantation">
+            <div class="story-img-accent"></div>
+          </div>
+          <div class="story-floating-badge">
+            <span class="badge-number">1972</span>
+            <span class="badge-text">Est.</span>
+          </div>
+        </div>
+        <div class="story-content reveal-right">
+          <span class="section-tag">Our Heritage</span>
+          <h2 class="section-title">A Journey From<br>Leaf to Cup</h2>
+          <p class="story-text">For over five decades, our family has cultivated the finest tea gardens in the misty
+            highlands. Every leaf is hand-selected at the peak of its flavor, sun-dried with patience, and crafted into
+            teas that honor nature's perfection.</p>
+          <p class="story-text">We believe tea is more than a beverage — it is a moment of peace, a bridge between
+            tradition and the present, a gift from the earth that deserves to be savored slowly.</p>
+          <div class="story-features">
+            <div class="feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path d="M12 22c5.5-3.5 10-7.5 10-13A6 6 0 0012 4 6 6 0 002 9c0 5.5 4.5 9.5 10 13z" fill="none"
+                    stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+              <span>Handpicked with love</span>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+              <span>Slow-crafted process</span>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="currentColor"
+                    stroke-width="1.5" />
+                </svg>
+              </div>
+              <span>Multi-layered flavors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCTS SECTION ========== -->
+  <section class="section products-section" id="products">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Our Collection</span>
+        <h2 class="section-title">Curated Tea Selection</h2>
+        <p class="section-subtitle">Each blend tells a story of its origin — from misty highlands to sun-kissed valleys.
+        </p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card reveal-up" style="--delay: 0s">
+          <div class="product-img-wrap">
+            <img src="images/product-1.png" alt="Green Garden Tea">
+            <div class="product-badge">Best Seller</div>
+          </div>
+          <div class="product-info">
+            <h3>Green Garden</h3>
+            <p class="product-origin">Da Lat Highlands, Vietnam</p>
+            <p class="product-notes">Notes of jasmine, fresh grass, light sweetness</p>
+            <div class="product-footer">
+              <span class="product-price">$28.00</span>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card reveal-up" style="--delay: 0.1s">
+          <div class="product-img-wrap">
+            <img src="images/product-2.png" alt="Ceremonial Matcha">
+            <div class="product-badge new">New</div>
+          </div>
+          <div class="product-info">
+            <h3>Ceremonial Matcha</h3>
+            <p class="product-origin">Uji, Kyoto, Japan</p>
+            <p class="product-notes">Rich umami, creamy body, vibrant green</p>
+            <div class="product-footer">
+              <span class="product-price">$42.00</span>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card reveal-up" style="--delay: 0.2s">
+          <div class="product-img-wrap">
+            <img src="images/product-3.png" alt="Golden Oolong">
+          </div>
+          <div class="product-info">
+            <h3>Golden Oolong</h3>
+            <p class="product-origin">Fujian Province, China</p>
+            <p class="product-notes">Toasted honey, orchid aroma, smooth finish</p>
+            <div class="product-footer">
+              <span class="product-price">$35.00</span>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card reveal-up" style="--delay: 0.3s">
+          <div class="product-img-wrap">
+            <img src="images/product-4.png" alt="Silver Needle">
+            <div class="product-badge premium">Premium</div>
+          </div>
+          <div class="product-info">
+            <h3>Silver Needle</h3>
+            <p class="product-origin">Yunnan, China</p>
+            <p class="product-notes">Delicate sweetness, melon, silk-like texture</p>
+            <div class="product-footer">
+              <span class="product-price">$55.00</span>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENEFITS SECTION ========== -->
+  <section class="section benefits-section" id="benefits">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Why Tea</span>
+        <h2 class="section-title">Nature's Gift to Wellness</h2>
+        <p class="section-subtitle">For centuries, tea has been revered for its healing properties and mindful rituals.
+        </p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal-up" style="--delay: 0s">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 48 48" width="48" height="48">
+              <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5" />
+              <path d="M24 14v10l7 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3>Antioxidant Rich</h3>
+          <p>Packed with catechins and polyphenols that protect cells from oxidative stress and slow aging.</p>
+        </div>
+        <div class="benefit-card reveal-up" style="--delay: 0.1s">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 48 48" width="48" height="48">
+              <path d="M24 4C14 4 8 14 8 22c0 10 8 18 16 22 8-4 16-12 16-22 0-8-6-18-16-18z" fill="none"
+                stroke="currentColor" stroke-width="1.5" />
+              <path d="M24 14c-4 4-6 8-4 14m4-14c4 4 6 8 4 14" fill="none" stroke="currentColor" stroke-width="1.2" />
+            </svg>
+          </div>
+          <h3>Calm & Focused</h3>
+          <p>L-theanine promotes a state of relaxed alertness — the perfect balance of calm and clarity.</p>
+        </div>
+        <div class="benefit-card reveal-up" style="--delay: 0.2s">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 48 48" width="48" height="48">
+              <path d="M10 34c0-8 6-14 14-14s14 6 14 14" fill="none" stroke="currentColor" stroke-width="1.5" />
+              <circle cx="24" cy="14" r="6" fill="none" stroke="currentColor" stroke-width="1.5" />
+              <path d="M18 38h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3>Metabolism Boost</h3>
+          <p>Natural compounds gently enhance fat oxidation and support a healthy metabolic rate.</p>
+        </div>
+        <div class="benefit-card reveal-up" style="--delay: 0.3s">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 48 48" width="48" height="48">
+              <path d="M14 24c0-6 4-12 10-14 6 2 10 8 10 14s-4 12-10 14c-6-2-10-8-10-14z" fill="none"
+                stroke="currentColor" stroke-width="1.5" />
+              <circle cx="24" cy="24" r="4" fill="none" stroke="currentColor" stroke-width="1.2" />
+            </svg>
+          </div>
+          <h3>Heart Health</h3>
+          <p>Regular tea consumption is linked to improved cardiovascular function and lower cholesterol.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ORIGIN SECTION ========== -->
+  <section class="section origin-section" id="origin">
+    <div class="origin-bg">
+      <img src="images/plantation.png" alt="Tea Origin">
+    </div>
+    <div class="origin-overlay"></div>
+    <div class="container origin-content">
+      <div class="origin-text reveal-up">
+        <span class="section-tag light">Our Plantations</span>
+        <h2 class="section-title light">From Misty Peaks<br>To Your Cup</h2>
+        <p class="origin-desc">Our teas are sourced from certified organic farms in the highlands of Vietnam, the
+          ancient gardens of Yunnan, the terraced fields of Uji, and the cloud forests of Fujian.</p>
+        <div class="origin-locations">
+          <div class="location">
+            <span class="loc-name">Da Lat</span>
+            <span class="loc-country">Vietnam</span>
+          </div>
+          <div class="location">
+            <span class="loc-name">Uji</span>
+            <span class="loc-country">Japan</span>
+          </div>
+          <div class="location">
+            <span class="loc-name">Fujian</span>
+            <span class="loc-country">China</span>
+          </div>
+          <div class="location">
+            <span class="loc-name">Yunnan</span>
+            <span class="loc-country">China</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS SECTION ========== -->
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Voices</span>
+        <h2 class="section-title">What Tea Lovers Say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal-up" style="--delay: 0s">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"The Silver Needle is unlike anything I've ever tasted. It's like drinking silk —
+            incredibly smooth with a delicate sweetness that lingers."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div>
+              <span class="author-name">Amelia Chen</span>
+              <span class="author-title">Tea Sommelier, NYC</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal-up" style="--delay: 0.1s">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"I've been searching for a matcha this vibrant for years. The color, the umami,
+            the creaminess — it's perfection."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">K</div>
+            <div>
+              <span class="author-name">Kenji Tanaka</span>
+              <span class="author-title">Coffee & Tea Blogger</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal-up" style="--delay: 0.2s">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"The packaging is gorgeous and the tea itself is extraordinary. You can taste the
+            care in every sip."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div>
+              <span class="author-name">Marie Dubois</span>
+              <span class="author-title">Wellness Coach, Paris</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-card reveal-up">
+        <h2>Begin Your Tea Journey</h2>
+        <p>Subscribe to receive exclusive blends, seasonal picks, and brewing guides delivered to your door.</p>
+        <form class="cta-form" id="ctaForm">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+        <span class="cta-note">Free shipping on your first order • Cancel anytime</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <svg class="logo-icon" viewBox="0 0 40 40" width="40" height="40">
+              <path d="M20 4 C12 4, 6 12, 8 20 C10 28, 16 34, 20 36 C24 34, 30 28, 32 20 C34 12, 28 4, 20 4Z"
+                fill="none" stroke="currentColor" stroke-width="1.5" />
+              <path d="M20 10 C16 14, 14 20, 16 26 M20 10 C24 14, 26 20, 24 26" fill="none" stroke="currentColor"
+                stroke-width="1" />
+              <line x1="20" y1="26" x2="20" y2="36" stroke="currentColor" stroke-width="1.2" />
+            </svg>
+            <span>VERDANT</span>
+          </a>
+          <p>Crafting premium organic teas since 1972. Nature's finest, in your cup.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="#story">Our Story</a>
+          <a href="#products">Collection</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#origin">Plantations</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+          <a href="#">FAQ</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Pinterest</a>
+          <a href="#">Twitter</a>
+          <a href="#">Newsletter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Verdant Tea Co. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
