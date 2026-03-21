@@ -451,7 +451,7 @@ ul {
   position: absolute;
   inset: 0;
   z-index: 13;
-  background: linear-gradient(135deg, rgba(26, 46, 26, 0.55) 0%, rgba(26, 46, 26, 0.25) 50%, rgba(26, 46, 26, 0.4) 100%);
+  background: linear-gradient(to bottom, rgba(26, 46, 26, 0.4) 0%, rgba(26, 46, 26, 0.15) 40%, rgba(26, 46, 26, 0.2) 60%, rgba(26, 46, 26, 0.55) 100%);
   pointer-events: none;
 }
 
@@ -495,15 +495,17 @@ ul {
   color: var(--cream);
   margin-bottom: 24px;
   letter-spacing: -1px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .hero-description {
   font-size: 1.05rem;
   font-weight: 300;
   line-height: 1.8;
-  color: rgba(250, 248, 244, 0.8);
+  color: rgba(250, 248, 244, 0.9);
   margin-bottom: 36px;
   max-width: 460px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 .hero-cta-group {
@@ -529,15 +531,17 @@ ul {
   font-family: 'Outfit', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--tea-300);
+  color: var(--cream);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .stat-label {
   font-size: 0.75rem;
   font-weight: 400;
-  color: rgba(250, 248, 244, 0.6);
+  color: rgba(250, 248, 244, 0.85);
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* ==================== HERO SLIDER ==================== */
@@ -564,10 +568,12 @@ ul {
   flex: 0 0 calc(50% - 10px);
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: rgba(40, 60, 40, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transform: scale(0.92) translateZ(0);
-  opacity: 0.6;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transform: scale(0.95) translateZ(0);
+  opacity: 0.85;
   transition: var(--transition-slow);
   cursor: pointer;
 }
@@ -575,8 +581,8 @@ ul {
 .slide-card.active {
   transform: scale(1) translateZ(0);
   opacity: 1;
-  border-color: rgba(163, 204, 163, 0.4);
-  box-shadow: var(--shadow-glow);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .slide-card img {
@@ -593,20 +599,20 @@ ul {
   font-family: 'Outfit', sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--cream);
+  color: var(--tea-900);
   margin-bottom: 2px;
 }
 
 .slide-origin {
   font-size: 0.78rem;
-  color: rgba(250, 248, 244, 0.5);
+  color: var(--olive-600);
 }
 
 .slide-price {
   font-family: 'Outfit', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--tea-300);
+  color: var(--tea-700);
   margin-top: 6px;
   display: block;
 }
