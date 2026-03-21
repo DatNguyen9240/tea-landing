@@ -38,16 +38,29 @@
   let currentSlide = 0;
   let isAnimating = false;
 
+  // Cache slide/wrapper dimensions to avoid forced reflows during transitions
+  let cachedSlideWidth = 200;
+  let cachedWrapperWidth = 400;
+  const sliderWrapper = document.getElementById('sliderWrapper');
+
+  function measureSlider() {
+    cachedSlideWidth = slides[0]?.offsetWidth || 200;
+    cachedWrapperWidth = sliderWrapper?.offsetWidth || 400;
+  }
+
+  // Measure once on init (via rAF) and on resize
+  requestAnimationFrame(measureSlider);
+  window.addEventListener('resize', () => requestAnimationFrame(measureSlider), { passive: true });
+
   function updateSlider(index) {
     if (isAnimating) return;
     isAnimating = true;
 
     slides.forEach((s, i) => s.classList.toggle('active', i === index));
 
-    const slideWidth = slides[0]?.offsetWidth || 200;
+    // Use cached dimensions — no offsetWidth reads, no forced reflow
     const gap = 20;
-    const wrapperWidth = document.getElementById('sliderWrapper')?.offsetWidth || 400;
-    const offset = index * (slideWidth + gap) - (wrapperWidth / 2 - slideWidth / 2 - 10);
+    const offset = index * (cachedSlideWidth + gap) - (cachedWrapperWidth / 2 - cachedSlideWidth / 2 - 10);
     sliderTrack.style.transform = `translateX(${-Math.max(0, offset)}px)`;
 
     dots?.forEach((d, i) => d.classList.toggle('active', i === index));
@@ -100,7 +113,6 @@
 
   /* ---------- TOUCH SWIPE ---------- */
   let touchStartX = 0;
-  const sliderWrapper = document.getElementById('sliderWrapper');
   sliderWrapper?.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
   }, { passive: true });
@@ -112,6 +124,6 @@
     }
   }, { passive: true });
 
-  // Init — deferred to avoid forced reflow from offsetWidth reads
+  // Init — deferred to next frame so cached dimensions are ready
   requestAnimationFrame(() => updateSlider(0));
 })();

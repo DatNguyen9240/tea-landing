@@ -5,7 +5,7 @@
   /* ---------- DECORATIVE LEAF LAYER (between sky and hills) ---------- */
   const leavesContainer = document.getElementById('leavesContainer');
   const leafSrc = 'images/leaf.webp';
-  const LEAF_COUNT = window.matchMedia('(max-width: 767px)').matches ? 12 : 22;
+  const LEAF_COUNT = window.matchMedia('(max-width: 767px)').matches ? 8 : 14;
 
   // 3 depth sub-layers: back (smaller), mid, front (biggest, sharp)
   // Using opacity for depth illusion (much cheaper than CSS blur filter)
@@ -64,21 +64,37 @@
 
   for (let i = 0; i < LEAF_COUNT; i++) createLeaf(i);
 
+  /* ---------- PAUSE LEAF ANIMATIONS WHEN HERO IS OFF-SCREEN ---------- */
+  const heroSection = document.querySelector('.hero');
+  if (heroSection && leavesContainer) {
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => {
+        // Pause all leaf CSS animations when hero is not visible
+        leavesContainer.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+        // Also pause each leaf's individual animation
+        const state = entry.isIntersecting ? 'running' : 'paused';
+        const leaves = leavesContainer.querySelectorAll('.floating-leaf');
+        leaves.forEach(leaf => { leaf.style.animationPlayState = state; });
+      },
+      { threshold: 0 }
+    );
+    heroObserver.observe(heroSection);
+  }
+
   /* ---------- 3-LAYER PARALLAX SCROLLING (rAF throttled) ---------- */
   const heroSky = document.querySelector('.hero-sky-img');
   const heroHills = document.querySelector('.hero-hills-img');
   const heroText = document.querySelector('.hero-text');
   const heroSlider = document.querySelector('.hero-slider');
-  const heroOverlay = document.querySelector('.hero-overlay');
 
   let ticking = false;
 
   let heroHeight = 900;
   requestAnimationFrame(() => {
-    heroHeight = document.querySelector('.hero')?.offsetHeight || window.innerHeight;
+    heroHeight = heroSection?.offsetHeight || window.innerHeight;
   });
   window.addEventListener('resize', () => {
-    heroHeight = document.querySelector('.hero')?.offsetHeight || window.innerHeight;
+    heroHeight = heroSection?.offsetHeight || window.innerHeight;
   }, { passive: true });
 
   function handleParallax() {
@@ -89,8 +105,6 @@
       ticking = false;
       return;
     }
-
-    const ratio = scrollY / heroHeight;
 
     // Layer 1: Sky moves slowest (distant)
     if (heroSky) {
@@ -107,7 +121,7 @@
       heroHills.style.transform = `scale(1.05) translateY(${scrollY * 0.05}px) translateZ(0)`;
     }
 
-    // Content moves up slightly as you scroll (no fade)
+    // Content moves up slightly as you scroll
     if (heroText) {
       heroText.style.transform = `translateY(${scrollY * 0.15}px) translateZ(0)`;
     }
