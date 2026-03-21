@@ -808,6 +808,8 @@ ul {
   background: var(--mist);
   position: relative;
   z-index: 10;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }
 
 .products-grid {
@@ -933,6 +935,8 @@ ul {
   background: var(--cream);
   position: relative;
   z-index: 10;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
 }
 
 .benefits-grid {
@@ -991,6 +995,8 @@ ul {
   align-items: center;
   overflow: hidden;
   z-index: 10;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 .origin-bg {
@@ -1067,6 +1073,8 @@ ul {
   background: var(--mist);
   position: relative;
   z-index: 10;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 .testimonials-grid {
