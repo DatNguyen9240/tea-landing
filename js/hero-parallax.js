@@ -5,7 +5,7 @@
   /* ---------- DECORATIVE LEAF LAYER (between sky and hills) ---------- */
   const leavesContainer = document.getElementById('leavesContainer');
   const leafSrc = 'images/leaf.webp';
-  const LEAF_COUNT = window.matchMedia('(max-width: 767px)').matches ? 8 : 14;
+  const LEAF_COUNT = window.matchMedia('(max-width: 767px)').matches ? 5 : 8;
 
   // 3 depth sub-layers: back (smaller), mid, front (biggest, sharp)
   // Using opacity for depth illusion (much cheaper than CSS blur filter)
