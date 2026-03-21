@@ -30,10 +30,6 @@
     const posYPercent = layer.yMin + Math.random() * (layer.yMax - layer.yMin);
     const rotation = Math.random() * 160 - 80;
     const opacity = layer.opacityMin + Math.random() * (layer.opacityMax - layer.opacityMin);
-    const swayDuration = 4 + Math.random() * 5;
-    const swayDelay = Math.random() * 4;
-    const swayAmount = 5 + Math.random() * 10;
-    const rotSway = 3 + Math.random() * 8;
 
     leaf.style.cssText = `
       width: ${size}px;
@@ -42,46 +38,17 @@
       top: ${posYPercent}%;
       opacity: ${opacity};
       transform: rotate(${rotation}deg) translateZ(0);
-      --sway: ${swayAmount}px;
-      --rot-sway: ${rotSway}deg;
-      --base-rot: ${rotation}deg;
-      animation: leafSway ${swayDuration}s ${swayDelay}s ease-in-out infinite alternate;
     `;
 
     leavesContainer.appendChild(leaf);
     return leaf;
   }
 
-  // Inject leaf sway keyframes
-  const leafStyles = document.createElement('style');
-  leafStyles.textContent = `
-    @keyframes leafSway {
-      0%   { transform: rotate(var(--base-rot)) translateY(0) translateX(0) translateZ(0); }
-      100% { transform: rotate(calc(var(--base-rot) + var(--rot-sway))) translateY(var(--sway)) translateX(calc(var(--sway) * 0.6)) translateZ(0); }
-    }
-  `;
-  document.head.appendChild(leafStyles);
-
   for (let i = 0; i < LEAF_COUNT; i++) createLeaf(i);
 
-  /* ---------- PAUSE LEAF ANIMATIONS WHEN HERO IS OFF-SCREEN ---------- */
-  const heroSection = document.querySelector('.hero');
-  if (heroSection && leavesContainer) {
-    const heroObserver = new IntersectionObserver(
-      ([entry]) => {
-        // Pause all leaf CSS animations when hero is not visible
-        leavesContainer.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
-        // Also pause each leaf's individual animation
-        const state = entry.isIntersecting ? 'running' : 'paused';
-        const leaves = leavesContainer.querySelectorAll('.floating-leaf');
-        leaves.forEach(leaf => { leaf.style.animationPlayState = state; });
-      },
-      { threshold: 0 }
-    );
-    heroObserver.observe(heroSection);
-  }
 
   /* ---------- 3-LAYER PARALLAX SCROLLING (rAF throttled) ---------- */
+  const heroSection = document.querySelector('.hero');
   const heroSky = document.querySelector('.hero-sky-img');
   const heroHills = document.querySelector('.hero-hills-img');
   const heroText = document.querySelector('.hero-text');

@@ -806,6 +806,8 @@ ul {
   background: var(--mist);
   position: relative;
   z-index: 10;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }
 
 .products-grid {
@@ -931,6 +933,8 @@ ul {
   background: var(--cream);
   position: relative;
   z-index: 10;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
 }
 
 .benefits-grid {
@@ -989,6 +993,8 @@ ul {
   align-items: center;
   overflow: hidden;
   z-index: 10;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 .origin-bg {
@@ -1065,6 +1071,8 @@ ul {
   background: var(--mist);
   position: relative;
   z-index: 10;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 .testimonials-grid {
@@ -1142,6 +1150,8 @@ ul {
   padding: 80px 0 120px;
   position: relative;
   z-index: 10;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 400px;
 }
 
 .cta-card {
@@ -1246,6 +1256,8 @@ ul {
   color: var(--cream);
   position: relative;
   z-index: 10;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 400px;
 }
 
 .footer-grid {
