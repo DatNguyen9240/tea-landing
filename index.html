@@ -9,9 +9,15 @@
     content="Khám phá những loại trà thủ công cao cấp từ những đồn điền hữu cơ tốt nhất. Trải nghiệm thiên nhiên trong từng ngụm trà.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Async Google Fonts: eliminates render-blocking ~800ms -->
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+  </noscript>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -21,7 +27,8 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="nav-logo">
-        <img src="images/logo.png" alt="Nhất Lài" class="logo-icon">
+        <img src="images/logo.webp" alt="Nhất Lài" class="logo-icon">
+        
       </a>
       <ul class="nav-links">
         <li><a href="#story">Câu Chuyện</a></li>
@@ -54,7 +61,8 @@
 
     <!-- LAYER 1 (furthest back): Sky + distant mountains -->
     <div class="hero-layer hero-sky" id="heroSky">
-      <img src="images/sky-bg.png" alt="" class="hero-sky-img">
+      <img src="images/sky-bg.webp" alt="" class="hero-sky-img" fetchpriority="high">
+      
     </div>
 
     <!-- LAYER 2 (middle): Floating tea leaves -->
@@ -62,7 +70,8 @@
 
     <!-- LAYER 3 (foreground): Tea plantation hills -->
     <div class="hero-layer hero-hills" id="heroHills">
-      <img src="images/hills-fg.png" alt="" class="hero-hills-img">
+      <img src="images/hills-fg.webp" alt="" class="hero-hills-img">
+      
     </div>
 
     <!-- Overlay for text readability -->
@@ -100,33 +109,37 @@
         <div class="slider-wrapper" id="sliderWrapper">
           <div class="slider-track" id="sliderTrack">
             <div class="slide-card active" data-index="0">
-              <img src="images/product-1.png" alt="Trà Vườn Xanh">
+              <img src="images/product-1.webp" alt="Trà Vườn Xanh" loading="lazy">
+              
               <div class="slide-info">
-                <h3>Vườn Xanh</h3>
+                <p class="slide-name">Vườn Xanh</p>
                 <p class="slide-origin">Cao Nguyên Đà Lạt</p>
                 <span class="slide-price">690.000₫</span>
               </div>
             </div>
             <div class="slide-card" data-index="1">
-              <img src="images/product-2.png" alt="Matcha Nghi Lễ">
+              <img src="images/product-2.webp" alt="Matcha Nghi Lễ" loading="lazy">
+              
               <div class="slide-info">
-                <h3>Matcha Nghi Lễ</h3>
+                <p class="slide-name">Matcha Nghi Lễ</p>
                 <p class="slide-origin">Uji, Kyoto</p>
                 <span class="slide-price">1.050.000₫</span>
               </div>
             </div>
             <div class="slide-card" data-index="2">
-              <img src="images/product-3.png" alt="Ô Long Vàng">
+              <img src="images/product-3.webp" alt="Ô Long Vàng" loading="lazy">
+              
               <div class="slide-info">
-                <h3>Ô Long Vàng</h3>
+                <p class="slide-name">Ô Long Vàng</p>
                 <p class="slide-origin">Tỉnh Phúc Kiến</p>
                 <span class="slide-price">870.000₫</span>
               </div>
             </div>
             <div class="slide-card" data-index="3">
-              <img src="images/product-4.png" alt="Bạch Kim Châm">
+              <img src="images/product-4.webp" alt="Bạch Kim Châm" loading="lazy">
+              
               <div class="slide-info">
-                <h3>Bạch Kim Châm</h3>
+                <p class="slide-name">Bạch Kim Châm</p>
                 <p class="slide-origin">Vân Nam, Trung Quốc</p>
                 <span class="slide-price">1.370.000₫</span>
               </div>
@@ -156,7 +169,8 @@
 
     <!-- Teapot accent -->
     <div class="hero-bottom-accent">
-      <img src="images/teapot.png" alt="Ấm trà" class="teapot-img">
+      <img src="images/teapot.webp" alt="Ấm trà" class="teapot-img" loading="lazy">
+      
     </div>
 
     <!-- Wave transition -->
@@ -173,7 +187,8 @@
       <div class="story-grid">
         <div class="story-visual reveal-left">
           <div class="story-img-wrapper">
-            <img src="images/plantation.png" alt="Đồn Điền Trà">
+            <img src="images/plantation.webp" alt="Đồn Điền Trà" loading="lazy">
+            
             <div class="story-img-accent"></div>
           </div>
           <div class="story-floating-badge">
@@ -236,7 +251,8 @@
       <div class="products-grid">
         <div class="product-card reveal-up" style="--delay: 0s">
           <div class="product-img-wrap">
-            <img src="images/product-1.png" alt="Trà Vườn Xanh">
+            <img src="images/product-1.webp" alt="Trà Vườn Xanh" loading="lazy" width="640" height="640">
+            
             <div class="product-badge">Bán Chạy</div>
           </div>
           <div class="product-info">
@@ -251,7 +267,8 @@
         </div>
         <div class="product-card reveal-up" style="--delay: 0.1s">
           <div class="product-img-wrap">
-            <img src="images/product-2.png" alt="Matcha Nghi Lễ">
+            <img src="images/product-2.webp" alt="Matcha Nghi Lễ" loading="lazy" width="640" height="640">
+            
             <div class="product-badge new">Mới</div>
           </div>
           <div class="product-info">
@@ -266,7 +283,8 @@
         </div>
         <div class="product-card reveal-up" style="--delay: 0.2s">
           <div class="product-img-wrap">
-            <img src="images/product-3.png" alt="Ô Long Vàng">
+            <img src="images/product-3.webp" alt="Ô Long Vàng" loading="lazy" width="640" height="640">
+            
           </div>
           <div class="product-info">
             <h3>Ô Long Vàng</h3>
@@ -280,7 +298,8 @@
         </div>
         <div class="product-card reveal-up" style="--delay: 0.3s">
           <div class="product-img-wrap">
-            <img src="images/product-4.png" alt="Bạch Kim Châm">
+            <img src="images/product-4.webp" alt="Bạch Kim Châm" loading="lazy" width="640" height="640">
+            
             <div class="product-badge premium">Cao Cấp</div>
           </div>
           <div class="product-info">
@@ -359,7 +378,8 @@
   <!-- ========== ORIGIN SECTION ========== -->
   <section class="section origin-section" id="origin">
     <div class="origin-bg">
-      <img src="images/plantation.png" alt="Nguồn Gốc Trà">
+      <img src="images/plantation.webp" alt="Nguồn Gốc Trà" loading="lazy">
+      
     </div>
     <div class="origin-overlay"></div>
     <div class="container origin-content">
@@ -471,21 +491,21 @@
           <p>Chế tác trà hữu cơ cao cấp từ 1972. Tinh hoa thiên nhiên, trong tách trà của bạn.</p>
         </div>
         <div class="footer-links">
-          <h4>Khám Phá</h4>
+          <p class="footer-heading">Khám Phá</p>
           <a href="#story">Câu Chuyện</a>
           <a href="#products">Bộ Sưu Tập</a>
           <a href="#benefits">Lợi Ích</a>
           <a href="#origin">Đồn Điền</a>
         </div>
         <div class="footer-links">
-          <h4>Hỗ Trợ</h4>
+          <p class="footer-heading">Hỗ Trợ</p>
           <a href="#">Vận Chuyển</a>
           <a href="#">Đổi Trả</a>
           <a href="#">Câu Hỏi Thường Gặp</a>
           <a href="#">Liên Hệ</a>
         </div>
         <div class="footer-links">
-          <h4>Kết Nối</h4>
+          <p class="footer-heading">Kết Nối</p>
           <a href="#">Instagram</a>
           <a href="#">Pinterest</a>
           <a href="#">Twitter</a>
@@ -499,12 +519,12 @@
   </footer>
 
   <!-- Section-based JavaScript -->
-  <script src="js/navbar.js"></script>
-  <script src="js/hero-parallax.js"></script>
-  <script src="js/slider.js"></script>
-  <script src="js/reveal.js"></script>
-  <script src="js/origin.js"></script>
-  <script src="js/cta.js"></script>
+  <script src="js/navbar.js" defer></script>
+  <script src="js/hero-parallax.js" defer></script>
+  <script src="js/slider.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/origin.js" defer></script>
+  <script src="js/cta.js" defer></script>
 </body>
 
 </html>

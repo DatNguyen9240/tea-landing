@@ -112,6 +112,6 @@
     }
   }, { passive: true });
 
-  // Init
-  updateSlider(0);
+  // Init — deferred to avoid forced reflow from offsetWidth reads
+  requestAnimationFrame(() => updateSlider(0));
 })();

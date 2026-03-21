@@ -4,8 +4,8 @@
 
   /* ---------- DECORATIVE LEAF LAYER (between sky and hills) ---------- */
   const leavesContainer = document.getElementById('leavesContainer');
-  const leafSrc = 'images/leaf.png';
-  const LEAF_COUNT = window.innerWidth < 768 ? 12 : 22;
+  const leafSrc = 'images/leaf.webp';
+  const LEAF_COUNT = window.matchMedia('(max-width: 767px)').matches ? 12 : 22;
 
   // 3 depth sub-layers: back (smaller), mid, front (biggest, sharp)
   // Using opacity for depth illusion (much cheaper than CSS blur filter)
@@ -73,10 +73,16 @@
 
   let ticking = false;
 
+  let heroHeight = 900;
+  requestAnimationFrame(() => {
+    heroHeight = document.querySelector('.hero')?.offsetHeight || window.innerHeight;
+  });
+  window.addEventListener('resize', () => {
+    heroHeight = document.querySelector('.hero')?.offsetHeight || window.innerHeight;
+  }, { passive: true });
+
   function handleParallax() {
     const scrollY = window.scrollY;
-    const heroEl = document.querySelector('.hero');
-    const heroHeight = heroEl?.offsetHeight || window.innerHeight;
 
     // Early exit: don't compute if scrolled past hero
     if (scrollY > heroHeight) {
@@ -121,6 +127,6 @@
 
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Init
-  handleParallax();
+  // Init — deferred to avoid forced reflow
+  requestAnimationFrame(handleParallax);
 })();
