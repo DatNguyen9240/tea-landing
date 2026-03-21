@@ -392,7 +392,6 @@ ul {
   object-fit: cover;
   object-position: center;
   transform: scale(1.15) translateZ(0);
-  will-change: transform;
   image-rendering: auto;
 }
 
@@ -441,7 +440,6 @@ ul {
   object-fit: cover;
   object-position: center;
   transform: scale(1.05) translateZ(0);
-  will-change: transform;
   image-rendering: auto;
   /* Top 40% transparent (cuts sky), gradual blend, fully visible from 60% down */
   mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.7) 50%, black 60%);
