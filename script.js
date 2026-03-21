@@ -149,24 +149,24 @@
 
   const teaData = [
     {
-      headline: 'LEGACY OF THE<br>GREEN LEAF',
-      description: 'Handpicked from mist-laden highlands, our artisan teas capture the essence of nature — pure, untouched, and crafted with centuries of tradition.',
-      cta: 'Explore Collection'
+      headline: 'DI SẢN CỦA<br>LÁ XANH',
+      description: 'Hái tay từ vùng cao sương mù, trà thủ công của chúng tôi lưu giữ tinh hoa thiên nhiên — tinh khiết, nguyên bản, và được chế tác qua hàng thế kỷ truyền thống.',
+      cta: 'Khám Phá Bộ Sưu Tập'
     },
     {
-      headline: 'THE ART OF<br>MATCHA',
-      description: 'Stone-ground from shade-grown tencha leaves in Uji, Japan. A centuries-old tradition delivering unmatched umami and vibrant energy.',
-      cta: 'Discover Matcha'
+      headline: 'NGHỆ THUẬT<br>MATCHA',
+      description: 'Xay đá từ lá tencha trồng trong bóng râm tại Uji, Nhật Bản. Truyền thống hàng thế kỷ mang đến vị umami đậm đà và năng lượng rực rỡ.',
+      cta: 'Khám Phá Matcha'
     },
     {
-      headline: 'GOLDEN<br>OOLONG',
-      description: 'Semi-oxidized and hand-rolled in Fujian\'s ancient gardens. Complex layers of honey, orchid, and toasted sweetness unfold in every infusion.',
-      cta: 'Experience Oolong'
+      headline: 'Ô LONG<br>VÀNG',
+      description: 'Bán oxy hóa và cuộn tay trong vườn trà cổ Phúc Kiến. Từng tầng hương mật ong, lan, và ngọt nướng lan tỏa trong từng lần pha.',
+      cta: 'Trải Nghiệm Ô Long'
     },
     {
-      headline: 'SILVER<br>NEEDLE',
-      description: 'The rarest of white teas — only the finest buds, harvested once a year at dawn. Silk-like texture, melon sweetness, pure elegance.',
-      cta: 'Taste Luxury'
+      headline: 'BẠCH<br>KIM CHÂM',
+      description: 'Trà trắng quý hiếm nhất — chỉ những búp non tinh túy, thu hoạch mỗi năm một lần vào lúc bình minh. Mịn như lụa, ngọt dưa, thuần khiết tuyệt đối.',
+      cta: 'Thưởng Thức Cao Cấp'
     }
   ];
 
@@ -268,11 +268,11 @@
     e.preventDefault();
     const btn = ctaForm.querySelector('.btn-primary');
     const input = ctaForm.querySelector('input');
-    btn.textContent = 'Subscribed ✓';
+    btn.textContent = 'Đã Đăng Ký ✓';
     btn.style.background = 'linear-gradient(135deg, #2d6a2d, #4a7c4a)';
     input.value = '';
     setTimeout(() => {
-      btn.textContent = 'Subscribe';
+      btn.textContent = 'Đăng Ký';
       btn.style.background = '';
     }, 3000);
   });

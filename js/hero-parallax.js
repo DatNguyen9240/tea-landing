@@ -10,9 +10,9 @@
   // 3 depth sub-layers: back (smaller), mid, front (biggest, sharp)
   // Using opacity for depth illusion (much cheaper than CSS blur filter)
   const depthLayers = [
-    { sizeMin: 55, sizeMax: 95,  opacityMin: 0.3, opacityMax: 0.5,  yMin: 5,  yMax: 65 },
+    { sizeMin: 55, sizeMax: 95, opacityMin: 0.3, opacityMax: 0.5, yMin: 5, yMax: 65 },
     { sizeMin: 75, sizeMax: 125, opacityMin: 0.45, opacityMax: 0.7, yMin: 10, yMax: 70 },
-    { sizeMin: 105, sizeMax: 170, opacityMin: 0.65, opacityMax: 0.9,  yMin: 8,  yMax: 75 },
+    { sizeMin: 105, sizeMax: 170, opacityMin: 0.65, opacityMax: 0.9, yMin: 8, yMax: 75 },
   ];
 
   function createLeaf(index) {
@@ -101,17 +101,12 @@
       heroHills.style.transform = `scale(1.05) translateY(${scrollY * 0.05}px) translateZ(0)`;
     }
 
-    // Content fades out as you scroll
+    // Content moves up slightly as you scroll (no fade)
     if (heroText) {
       heroText.style.transform = `translateY(${scrollY * 0.15}px) translateZ(0)`;
-      heroText.style.opacity = 1 - ratio * 1.3;
     }
     if (heroSlider) {
       heroSlider.style.transform = `translateY(${scrollY * 0.1}px) translateZ(0)`;
-      heroSlider.style.opacity = 1 - ratio * 1.2;
-    }
-    if (heroOverlay) {
-      heroOverlay.style.opacity = Math.min(0.5 + ratio * 0.5, 1);
     }
 
     ticking = false;
