@@ -7,7 +7,9 @@
   <title>Di Sản Lá Xanh — Trà Thủ Công Cao Cấp</title>
   <meta name="description"
     content="Khám phá những loại trà thủ công cao cấp từ những đồn điền hữu cơ tốt nhất. Trải nghiệm thiên nhiên trong từng ngụm trà.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="images/sky-bg.webp" as="image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Async Google Fonts: eliminates render-blocking ~800ms -->
@@ -20,6 +22,80 @@
       rel="stylesheet">
   </noscript>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://tea-landing-kappa.vercel.app/">
+
+  <!-- Open Graph (Facebook, Zalo) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Di Sản Lá Xanh — Trà Thủ Công Cao Cấp">
+  <meta property="og:description" content="Khám phá những loại trà thủ công cao cấp từ những đồn điền hữu cơ tốt nhất. Trải nghiệm thiên nhiên trong từng ngụm trà.">
+  <meta property="og:image" content="https://tea-landing-kappa.vercel.app/images/sky-bg.webp">
+  <meta property="og:url" content="https://tea-landing-kappa.vercel.app/">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Nhất Lài Tea">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Di Sản Lá Xanh — Trà Thủ Công Cao Cấp">
+  <meta name="twitter:description" content="Khám phá những loại trà thủ công cao cấp từ những đồn điền hữu cơ tốt nhất.">
+  <meta name="twitter:image" content="https://tea-landing-kappa.vercel.app/images/sky-bg.webp">
+
+  <!-- Schema JSON-LD: LocalBusiness + Products -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nhất Lài Tea",
+    "description": "Chế tác trà hữu cơ cao cấp từ 1972. Tinh hoa thiên nhiên, trong tách trà của bạn.",
+    "url": "https://tea-landing-kappa.vercel.app/",
+    "image": "https://tea-landing-kappa.vercel.app/images/sky-bg.webp",
+    "foundingDate": "1972",
+    "priceRange": "$$",
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Vườn Xanh",
+          "description": "Hương nhài, cỏ tươi, vị ngọt nhẹ. Cao Nguyên Đà Lạt, Việt Nam.",
+          "image": "https://tea-landing-kappa.vercel.app/images/product-1.webp",
+          "offers": { "@type": "Offer", "price": "690000", "priceCurrency": "VND" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Matcha Nghi Lễ",
+          "description": "Umami đậm đà, béo mịn, xanh rực rỡ. Uji, Kyoto, Nhật Bản.",
+          "image": "https://tea-landing-kappa.vercel.app/images/product-2.webp",
+          "offers": { "@type": "Offer", "price": "1050000", "priceCurrency": "VND" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Ô Long Vàng",
+          "description": "Mật ong nướng, hương lan, vị mượt mà. Tỉnh Phúc Kiến, Trung Quốc.",
+          "image": "https://tea-landing-kappa.vercel.app/images/product-3.webp",
+          "offers": { "@type": "Offer", "price": "870000", "priceCurrency": "VND" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Bạch Kim Châm",
+          "description": "Ngọt tinh tế, vị dưa, mượt như lụa. Vân Nam, Trung Quốc.",
+          "image": "https://tea-landing-kappa.vercel.app/images/product-4.webp",
+          "offers": { "@type": "Offer", "price": "1370000", "priceCurrency": "VND" }
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -62,7 +138,7 @@
 
     <!-- LAYER 1 (furthest back): Sky + distant mountains -->
     <div class="hero-layer hero-sky" id="heroSky">
-      <img src="images/sky-bg.webp" alt="" class="hero-sky-img" fetchpriority="high" width="1920" height="1280">
+      <img src="images/sky-bg.webp" alt="Bầu trời vùng cao sương mù" class="hero-sky-img" fetchpriority="high" width="1920" height="1280">
 
     </div>
 
@@ -71,7 +147,7 @@
 
     <!-- LAYER 3 (foreground): Tea plantation hills -->
     <div class="hero-layer hero-hills" id="heroHills">
-      <img src="images/hills-fg.webp" alt="" class="hero-hills-img" fetchpriority="high" width="1920" height="1280">
+      <img src="images/hills-fg.webp" alt="Đồi trà xanh mướt vùng cao" class="hero-hills-img" fetchpriority="high" width="1920" height="1280">
 
     </div>
 
@@ -519,13 +595,7 @@
     </div>
   </footer>
 
-  <!-- Section-based JavaScript -->
-  <script src="js/navbar.js" defer></script>
-  <script src="js/hero-parallax.js" defer></script>
-  <script src="js/slider.js" defer></script>
-  <script src="js/reveal.js" defer></script>
-  <script src="js/origin.js" defer></script>
-  <script src="js/cta.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 
 </html>
