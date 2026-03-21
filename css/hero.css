@@ -6,6 +6,7 @@
   align-items: center;
   overflow: visible;
   background: var(--tea-900);
+  contain: layout style;
 }
 
 /* Shared layer base */
@@ -24,8 +25,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.15);
+  object-position: center;
+  transform: scale(1.15) translateZ(0);
   will-change: transform;
+  image-rendering: auto;
 }
 
 /* LAYER 2: Floating leaves (between sky and hills) */
@@ -42,8 +45,9 @@
 
 .floating-leaf {
   position: absolute;
-  will-change: transform;
+  transform: translateZ(0);
   pointer-events: none;
+  contain: layout style;
 }
 
 .floating-leaf img {
@@ -61,8 +65,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.05);
+  object-position: center;
+  transform: scale(1.05) translateZ(0);
   will-change: transform;
+  image-rendering: auto;
   /* Top 40% transparent (cuts sky), gradual blend, fully visible from 60% down */
   mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.7) 50%, black 60%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.7) 50%, black 60%);
@@ -98,7 +104,7 @@
 .hero-badge {
   display: inline-block;
   padding: 8px 20px;
-  background: rgba(163, 204, 163, 0.15);
+  background: rgba(45, 74, 45, 0.6);
   border: 1px solid rgba(163, 204, 163, 0.3);
   border-radius: 100px;
   font-size: 0.72rem;
@@ -107,7 +113,6 @@
   text-transform: uppercase;
   color: var(--tea-200);
   margin-bottom: 28px;
-  backdrop-filter: blur(10px);
 }
 
 .hero-headline {
@@ -187,18 +192,16 @@
   flex: 0 0 calc(50% - 10px);
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(40, 60, 40, 0.65);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  transform: scale(0.92);
+  transform: scale(0.92) translateZ(0);
   opacity: 0.6;
   transition: var(--transition-slow);
   cursor: pointer;
 }
 
 .slide-card.active {
-  transform: scale(1);
+  transform: scale(1) translateZ(0);
   opacity: 1;
   border-color: rgba(163, 204, 163, 0.4);
   box-shadow: var(--shadow-glow);
@@ -250,11 +253,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(45, 74, 45, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--cream);
   transition: var(--transition);
-  backdrop-filter: blur(10px);
 }
 
 .slider-btn:hover {
@@ -289,7 +291,7 @@
   bottom: 40px;
   right: 5%;
   z-index: 13;
-  width: 280px;
+  width: 250px;
 }
 
 .teapot-img {
