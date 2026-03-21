@@ -102,13 +102,13 @@
   // Auto-advance
   let autoSlideInterval = setInterval(() => {
     updateSlider((currentSlide + 1) % slides.length);
-  }, 5000);
+  }, 3000);
 
   document.querySelector('.hero-slider')?.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
   document.querySelector('.hero-slider')?.addEventListener('mouseleave', () => {
     autoSlideInterval = setInterval(() => {
       updateSlider((currentSlide + 1) % slides.length);
-    }, 5000);
+    }, 3000);
   });
 
   /* ---------- TOUCH SWIPE ---------- */
